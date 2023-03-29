@@ -1,0 +1,109 @@
+<app-header></app-header>
+
+<div class="main">
+  <div class="about-container">
+    <div class="card-content">
+      <div class="about-us mb-3">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-5">
+            <h1 class="about mb-2 mt-5"> About </h1>
+            <hr class="seperator mb-4">
+            <h1 class="top-about-title text-justify mb-5">Innovation Management Academy Albania</h1>
+
+            <p class="content text-justify">
+              Innovation Management Academy Albania has become a recognized leader in intrapreneurship
+              education and bridging the diverse ICT talents and hidden gems with corporates. It is divided in two
+              main pillars: Innovation Academy &amp; Talent Acquisition.
+            </p>
+
+            <p class="content2 text-justify">
+              IMAAs’ Innovation Academy is a unique educational format that incorporates lectures, training, and
+              workshops, aiming to build your organization’s capability to manage innovation. It's boot-camp will
+              provide the participants with the opportunity to learn why they should innovate, what they could
+              innovate, and then how to do that, from some of the best regional and international experts in that
+              field. IMAA is mainly focused on innovation, digital transformation, operational excellence, growth
+              strategies, talent development, coaching integration, switch carrier, and career guidance by
+              bringing
+              into light active stages programs and mentoring them by industry professionals.
+            </p>
+
+            <p class="content2 text-justify">
+              IMAAs’ Talent Acquisition is to make the Albanian Market aware of the first unique platform in providing
+              better access to new job opportunities in the ICT sector and innovative products/ services
+              (intermediations process) though providing:
+            </p>
+
+            <div class="content2 contentli text-justify">
+
+              <ul>
+                <li class="text-justify">
+                  A talent acquisition matchmaking process (focusing on how a company intends to position itself
+                  as an attractive destination and how it plans to source, assess, employ, and bring on board the
+                  young generations to respond to the market employment needs in Albania in the ICT sector.
+                </li>
+
+                <li class="text-justify">
+                  Providing soft skills training to fulfill the students&#39; &amp; ICT Companies&#39; gaps and
+                  challenges in 12
+                  soft skills modules.
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <p-carousel [value]="lecturers" styleClass="custom-carousel" [numVisible]="3" [numScroll]="4" [circular]="false"
+      [autoplayInterval]="3000">
+      <ng-template pTemplate="header">
+        <h5 class="lecturersHeader text-center mb-5">Board Members</h5>
+      </ng-template>
+      <ng-template let-lecturer pTemplate="items">
+        <div class="product-item pt-4">
+          <div class="product-item-content">
+            <div class="mb-3 d-flex justify-content-center">
+              <div class="card lectureCard">
+                <div class="card-body imgWrapper">
+                  <img src="assets/lectures/{{ lecturer.image.concat('.png') }}" [alt]="lecturer.name" class="imgs" />
+                  <h3 class="mb-1 d-flex justify-content-center names">
+                    {{ lecturer.name }}
+                  </h3>
+                  <div class="icons">
+                    <a href="{{ lecturer.profile }}">
+                      <i class="fa fa-linkedin brbys"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+
+  <div class="container">
+    <p-carousel [value]="testimonialsCarusel" styleClass="custom-carousel mt-5 mb-4" [numVisible]="1" [numScroll]="1"
+      [circular]="true" [autoplayInterval]="3000">
+      <ng-template let-lecturer pTemplate="item">
+
+        <div class="content-slider mt-4">
+          <div class="row  ">
+            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-4">
+              <img src="assets/about/{{lecturer.image.concat('.png')}}" [alt]="lecturer.name" class="about-image" />
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8">
+              <h5 class="description-content text-justify">{{lecturer.title}}</h5>
+              <p class="mb-1 d-flex justify-content-center text-justify font-14">{{lecturer.description}}</p>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+</div>
+<app-footer></app-footer>

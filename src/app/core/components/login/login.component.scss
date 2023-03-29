@@ -1,0 +1,112 @@
+@import "./src/styles/base";
+.signupBtn {
+  margin-top: 20px;
+}
+.wrapper{
+  box-shadow: 0px 1px 13px 2px #dfebe8;
+  border-width: 0;
+}
+
+.logoImg {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.loginInputs:hover {
+  border: 1px solid #468477 !important;
+}
+
+input:focus {
+  outline: none !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+input[type="text"],
+input[type="password"]:focus {
+  border-color: #ced4da;
+}
+
+::ng-deep .form-check-input:checked {
+  background-color: $primaryFillColor;
+  border-color: $primaryFillColor;
+}
+
+::ng-deep .form-check-input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-appearance: none;
+  border-color: #ced4da;
+}
+
+.signinBtn {
+  width: 100%;
+  align-content: center;
+  background-color: #468477;
+  margin-top: 20px;
+  color: white;
+  &:hover {
+    outline: none !important;
+    -webkit-appearance: none;
+    box-shadow: none !important;
+  }
+  &:focus {
+    outline: none !important;
+    -webkit-appearance: none;
+    box-shadow: none !important;
+  }
+}
+
+.forgotText {
+  font-size: 15px;
+}
+
+.forgotText:hover {
+  cursor: pointer;
+}
+
+.container {
+  width: 70%;
+}
+
+.inputs {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.loginLabels {
+  color: #020202;
+  margin-bottom: 10px;
+}
+
+.errorMsg {
+  padding: 10px;
+  color: black;
+}
+
+.submitFailure {
+  width: 80%;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.loginMsg {
+  align-self: center;
+}
+
+.card {
+  width: 40%;
+}
+
+@media (max-width: 600px) {
+  .logoImg {
+    width: 280px;
+    height: 200px;
+    margin-bottom: 10px;
+  }
+  .inputs {
+    padding-left: 1px;
+    padding-right: 1px;
+  }
+}

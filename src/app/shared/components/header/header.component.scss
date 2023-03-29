@@ -1,0 +1,56 @@
+// Getting the social media icons
+@import url("https://css.gg/facebook.css");
+@import url("https://css.gg/instagram.css");
+@import "../../../../styles/base.scss";
+
+.navbar1 {
+  background-color: white !important;
+  box-shadow: 0px 1px 7px 0px #b4c1bd;
+}
+
+.brand {
+  font-size: 30px;
+  font-weight: normal;
+  margin-left: 35px;
+  color: $primaryColorFont;
+}
+
+.social-media {
+  display: flex;
+  justify-content: space-evenly;
+  // width: 10%;
+}
+
+.brands {
+  color: $primaryColorFont;
+}
+
+.i {
+  background: #fff;
+  border-radius: 50%;
+  display: inline-block;
+  // height: 20px;
+  // width: 20px;
+}
+
+.nav-link.active.links {
+  color: $primaryColorFont;
+  font-size: 16px;
+  font-weight: 500;
+  &:hover {
+    color: #468477;
+  }
+}
+
+@media (max-width: 600px) {
+  .social-media a {
+    margin-right: 15px;
+  }
+  .social-media {
+    margin-left: 50px;
+  }
+  .brand img {
+    width: 140px;
+    height: 80px;
+  }
+}

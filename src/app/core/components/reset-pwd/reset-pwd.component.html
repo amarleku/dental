@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+<div class="container wrapper mb-3">
+  <div class="card">
+    <div class="card-body loginSpace">
+      <div class="row d-flex justify-content-center">
+      </div>
+      <div class="row inputs d-flex justify-content-center">
+        <form [formGroup]="resetForm" (submit)="onSubmit()">
+          <label for="email">New password</label>
+          <input type="password" id="email" class="form-control mt-1" formControlName="password"
+            placeholder="Enter your new password" required />
+
+          <div class="alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+            <div class="errorMsg" *ngIf="password.errors?.['required']">
+              New Password is a required field!
+            </div>
+          </div>
+          <div class="alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+            <div class="errorMsg" *ngIf="password.errors?.['minlength']">
+              New Password must be at least 6 characters!
+            </div>
+          </div>
+
+          <label for="password" class="mt-4">Repeat Password</label>
+          <input type="password" id="password" class="form-control mt-1" formControlName="repeatPassword"
+            placeholder="Repeat your password" required />
+
+          <div class="d-flex justify-content-center p-3 pb-3">
+            <button class="btn resetBtn" type="submit" [disabled]="resetForm.invalid"><i class="fa fa-user icon"
+                aria-hidden="true"></i>Reset Password</button>
+          </div>
+        </form>
+        <div class="alert alert-danger d-flex justify-content-center submitFailure" *ngIf="errorMsg !== ''">
+          {{ errorMsg }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+
+<app-footer></app-footer>
+-->

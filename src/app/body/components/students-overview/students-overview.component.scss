@@ -1,0 +1,33 @@
+@import "./src/styles/base";
+.std-overview {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
+.student-overview {
+  padding-left: 20px;
+  width: 100%;
+}
+
+::ng-deep .p-datatable.p-datatable-gridlines .p-paginator-bottom {
+  display: flex;
+  justify-content: end;
+}
+
+th {
+  align-items: center;
+}
+
+.top-actions {
+  display: flex;
+}
+
+.table-header {
+  color: $primaryFillColor;
+}
+.card {
+  box-shadow: 5px 7px 12px 0px #88888847 !important;
+}

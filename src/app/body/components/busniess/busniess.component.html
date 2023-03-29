@@ -1,0 +1,123 @@
+<app-header></app-header>
+<div class="container-fluid d-flex justify-content-center  header">
+  <h2>Business</h2>
+</div>
+<div class="container-fluid">
+  <div class="container">
+    <p-messages [(value)]="msgs1" [enableService]="false"></p-messages>
+  </div>
+  <form [formGroup]="mainForm" (ngSubmit)="onSubmit()">
+    <div class="row d-flex justify-content-center mt-5 inputSet">
+      <div class="col-xs-12 col-sm-12 col-md-6 inputs">
+        <label for="fullName">Full Name</label>
+        <input class="form-control inputCell" id="fullName"
+          [ngStyle]="{'border-color': fullName.invalid && (fullName.dirty || fullName.touched) ? 'red': ''}" type="text"
+          formControlName="fullName" placeholder="Name/Last Name" />
+        <span *ngIf="fullName.invalid && (fullName.dirty || fullName.touched)">
+          <p class="errorMsg" *ngIf="fullName.errors?.['required']">Name/Last Name is a required field!</p>
+        </span>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 inputs">
+        <label for="email">Email Adress</label>
+        <input class="form-control inputCell" id="email" type="text" formControlName="email"
+          [ngStyle]="{'border-color': email.invalid && (email.dirty || email.touched) ? 'red': ''}"
+          placeholder="Business E-mail" />
+        <span *ngIf="email.invalid && (email.dirty || email.touched)">
+          <p class="errorMsg" *ngIf="email.errors?.['required']">E-mail Address is a required field!</p>
+          <p class="errorMsg" *ngIf="email.errors?.['email']">Wrong e-mail address format!</p>
+        </span>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center mt-3 inputSet">
+      <div class="col-xs-12 col-sm-12 col-md-6 inputs">
+        <label for="telephone">Telephone number</label>
+        <input class="form-control inputCell" id="telephone" type="text" formControlName="telephone"
+          [ngStyle]="{'border-color': telephone.invalid && (telephone.dirty || telephone.touched) ? 'red': ''}"
+          placeholder="Phone Number" />
+        <span *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)">
+          <p class="errorMsg" *ngIf="telephone.errors?.['required']">Phone number is a required field!</p>
+        </span>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 inputs">
+        <label for="company">Company Name</label>
+        <input class="form-control inputCell" id="company" type="text" formControlName="companyName"
+          [ngStyle]="{'border-color': companyName.invalid && (companyName.dirty || companyName.touched) ? 'red': ''}"
+          placeholder="Legal Company Name" />
+        <span *ngIf="companyName.invalid && (companyName.dirty || companyName.touched)">
+          <p class="errorMsg" *ngIf="companyName.errors?.['required']">Company Name is a required field!</p>
+        </span>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center mt-3 inputSet">
+      <div class="col-xs-12 col-sm-12 col-md-6 inputs">
+        <label for="nuis">NUIS</label>
+        <input class="form-control inputCell" id="nuis" type="text" formControlName="NUIS"
+          [ngStyle]="{'border-color': NUIS.invalid && (NUIS.dirty || NUIS.touched) ? 'red': ''}" placeholder="NUIS" />
+        <span *ngIf="NUIS.invalid && (NUIS.dirty || NUIS.touched)">
+          <p class="errorMsg" *ngIf="NUIS.errors?.['required']">NUIS is a required field!</p>
+        </span>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 inputs">
+        <label for="location">Location</label>
+        <input class="form-control inputCell" id="location" type="text" formControlName="location"
+          [ngStyle]="{'border-color': location.invalid && (location.dirty || location.touched) ? 'red': ''}"
+          placeholder="Headquarters Location" />
+        <span *ngIf="location.invalid && (location.dirty || location.touched)">
+          <p class="errorMsg" *ngIf="location.errors?.['required']">Headquarters Location is a required field!</p>
+        </span>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center mt-3 inputSet">
+      <div class="col-xs-12 col-sm-12 col-md-6 inputs">
+        <label>Choose the required skills</label>
+        <p-multiSelect id="dropdownSkills" [options]="skills" [(ngModel)]="selectedSkill"
+          [ngModelOptions]="{standalone: true}" optionLabel="skill" placeholder="Choose the required skills">
+        </p-multiSelect>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 inputs">
+        <label for="position">Position Requirements</label>
+        <input class="form-control inputCell" id="position" type="text" formControlName="positionReq"
+          [ngStyle]="{'border-color': positionReq.invalid && (positionReq.dirty || positionReq.touched) ? 'red': ''}"
+          placeholder="Position Requirement" />
+        <span *ngIf="positionReq.invalid && (positionReq.dirty || positionReq.touched)">
+          <p class="errorMsg" *ngIf="positionReq.errors?.['required']">Position Requirement is a required field!</p>
+        </span>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center mt-3 inputSet">
+      <div class="col-xs-12 col-sm-12 col-md-6 inputs">
+        <label for="skills2">Additional Skills</label>
+        <input class="form-control inputCell" id="skills2" type="text" formControlName="additionalSkill"
+          placeholder="Additional Skills" />
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 inputs">
+        <label for="num">Number of employees</label>
+        <input class="form-control inputCell" id="num" type="text" formControlName="noOfEmployees"
+          [ngStyle]="{'border-color': noOfEmployees.invalid && (noOfEmployees.dirty || noOfEmployees.touched) ? 'red': ''}"
+          placeholder="Number of employees" />
+        <span *ngIf="noOfEmployees.invalid && (noOfEmployees.dirty || noOfEmployees.touched)">
+          <p class="errorMsg" *ngIf="noOfEmployees.errors?.['required']">Employee Number is a required field!</p>
+        </span>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 mt-5 descArea">
+        <label for="talent">Describe your talent requirements</label>
+        <textarea class="form-control textSpace" id="talent" rows="4" aria-label="With textarea"
+          formControlName="describe" placeholder="Describe">
+        </textarea>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 pb-4 inputs">
+        <button class="btn btn-lg sendBtn" [disabled]="mainForm.invalid || selectedSkill.length == 0">Add
+          Business</button>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 inputs">
+      </div>
+    </div>
+  </form>
+</div>
+<app-footer></app-footer>

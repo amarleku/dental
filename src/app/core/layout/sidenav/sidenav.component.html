@@ -1,0 +1,33 @@
+<div class="navigation d-lg-block d-none d-flex justify-content-center" id="sidebar">
+  <div class="logo-container">
+    <img id="icon" width="200" class="menu-title" routerLinkActive="active-icon" src="/assets/IMMA.svg"
+      alt="Menu icon which when clicked closes sidebar or expands it">
+  </div>
+  <div class="flex-column">
+    <li (click)="displayStudents()" id="students" class="list menu d-flex justify-content-between align-items-center">
+      <div>
+        <i class="fa fa-graduation-cap grid" aria-hidden="true"></i>
+        <a class="icon" (click)="displayStudents()">
+          Talent
+        </a>
+      </div>
+    </li>
+    <li (click)="displayBusiness()" id="business"
+      class="list menu d-flex justify-content-between align-items-center li-without-border">
+      <a class="icon" (click)="displayBusiness()">
+        <div>
+          <i class="fa fa-briefcase grid" aria-hidden="true"></i>
+          Business
+        </div>
+      </a>
+    </li>
+    <li (click)="logout()" id="logout" class="li-without-border">
+      <div>
+        <i class="fa fa-sign-out grid" aria-hidden="true"></i>
+        <a class="icon" (click)="logout()">
+          Logout
+        </a>
+      </div>
+    </li>
+  </div>
+</div>

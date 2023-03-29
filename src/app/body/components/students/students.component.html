@@ -1,0 +1,95 @@
+<app-header></app-header>
+<div class="container-fluid d-flex justify-content-center  header">
+  <h2>Talent</h2>
+</div>
+<div class="container-fluid">
+  <div class="container">
+    <p-messages [(value)]="msgs1" [enableService]="false"></p-messages>
+  </div>
+  <form [formGroup]="mainForm" (ngSubmit)="onSubmit()">
+    <div class="row d-flex justify-content-center mt-5 inputSet">
+      <div class="col-xs-12 col-sm-12 col-md-12 inputs">
+        <label for="nameInput" class="labels">First Name</label>
+        <input class="form-control inputCell" id="nameInput" type="text" formControlName="name"
+          [ngStyle]="{'border-color': name.invalid && (name.dirty || name.touched) ? 'red': ''}" placeholder="Name" />
+        <span *ngIf="name.invalid && (name.dirty || name.touched)">
+          <p class="errorMsg" *ngIf="name.errors?.['required']">First Name is a required field!</p>
+        </span>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12 inputs">
+        <label for="surnameInput" class="labels">Last Name</label>
+        <input class="form-control inputCell" id="surnameInput" type="text" formControlName="lastName"
+          [ngStyle]="{'border-color': lastName.invalid && (lastName.dirty || lastName.touched) ? 'red': ''}"
+          placeholder="Surname" />
+        <span *ngIf="lastName.invalid && (lastName.dirty || lastName.touched)">
+          <p class="errorMsg" *ngIf="lastName.errors?.['required']">Last Name is a required field!</p>
+        </span>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center mt-3 inputSet">
+      <div class="col-xs-12 col-sm-12 col-md-6 inputs">
+        <label for="telInput" class="labels">Telephone number</label>
+        <input class="form-control inputCell" id="telInput" type="text" placeholder="Telephone"
+          [ngStyle]="{'border-color': telephone.invalid && (telephone.dirty || telephone.touched) ? 'red': ''}"
+          formControlName="telephone" />
+        <span *ngIf="telephone.invalid && (telephone.dirty || telephone.touched)">
+          <p class="errorMsg" *ngIf="telephone.errors?.['required']">Phone number is a required field!</p>
+        </span>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 inputs">
+        <label for="emailInput" class="labels">E-mail address</label>
+        <input class="form-control inputCell" id="emailInput" type="text" placeholder="E-mail"
+          [ngStyle]="{'border-color': email.invalid && (email.dirty || email.touched) ? 'red': ''}"
+          formControlName="email" />
+        <span *ngIf="email.invalid && (email.dirty || email.touched)">
+          <p class="errorMsg" *ngIf="email.errors['required']">Email Address is a required field!</p>
+          <p class="errorMsg" *ngIf="email.errors['email']">Wrong email address format!</p>
+        </span>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center mt-3 inputSet">
+      <div class="col-xs-12 col-sm-12 col-md-6 inputs">
+        <label class="labels">Choose your Skills</label>
+        <p-multiSelect id="dropdownSkills" [options]="skills" [(ngModel)]="selectedSkill"
+          [ngModelOptions]="{standalone: true}" optionLabel="skill" placeholder="Choose your skills">
+        </p-multiSelect>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 inputs">
+        <label for="positionInput" class="labels">Position</label>
+        <input class="form-control inputCell" id="positionInput" type="text" placeholder="Position"
+          [ngStyle]="{'border-color': position.invalid && (position.dirty || position.touched) ? 'red': ''}"
+          formControlName="position" />
+        <span class="" *ngIf="position.invalid && (position.dirty || position.touched)">
+          <p class="errorMsg" *ngIf="position.errors?.['required']">Position is a required field!</p>
+        </span>
+      </div>
+    </div>
+
+    <div class="row d-flex justify-content-center mt-3 inputSet">
+      <div class="col-xs-12 col-sm-12 col-md-12 inputs additional-skills">
+        <label for="additionalInput" class="labels">Additional Skills</label>
+        <input class="form-control inputCell" id="additionalInput" type="text" placeholder="Additional Skills"
+          formControlName="additionSkills" />
+      </div>
+    </div>
+  
+    <div class="row d-flex justify-content-center mt-3 inputSet">
+      <div class="col-xs-12 col-sm-12 col-md-12 mt-3 descArea">
+        <label class="labels">Experience Description</label>
+        <textarea class="form-control textSpace" rows="4" aria-label="With textarea" placeholder="Experience"
+          formControlName="experience"></textarea>
+      </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 pb-4 inputs">
+        <button class="btn btn-lg sendBtn">Add Talent</button>
+        <p-messages></p-messages>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 inputs">
+      </div>
+    </div>
+  </form>
+</div>
+<app-footer></app-footer>

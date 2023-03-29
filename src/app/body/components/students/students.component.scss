@@ -1,0 +1,215 @@
+@import "../../../../styles/base.scss";
+
+.header {
+  color: white;
+  padding: 6em;
+  background: url("../../../../assets/img/Students.png") no-repeat center center;
+}
+
+.additional-skills {
+  width: 60% !important;
+}
+.hidden{
+  display: none;
+}
+.inputs {
+  width: 30%;
+}
+
+.inputCell {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.inputCell:hover {
+  border: 1px solid $primaryFillColor !important;
+}
+
+#dropdownSkills {
+  outline: none !important;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+::ng-deep .p-multiselect:hover {
+  border: 1px solid green !important;
+}
+
+::ng-deep .p-multiselect:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-appearance: none;
+  border: 1px solid $primaryFillColor !important;
+}
+
+::ng-deep .p-multiselect-filter:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-appearance: none;
+  border: 1px solid $primaryFillColor !important;
+}
+
+::ng-deep .p-multiselect-filter:hover {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-appearance: none;
+  border: 1px solid #ced4da !important;
+}
+
+::ng-deep
+  .p-multiselect-panel
+  .p-multiselect-items
+  .p-multiselect-item.p-highlight {
+  background-color: white;
+}
+
+::ng-deep .p-checkbox .p-checkbox-box {
+  border: 2px solid green !important;
+}
+
+::ng-deep .p-checkbox .p-checkbox-box .p-checkbox-icon {
+  background-color: $primaryFillColor;
+  border-color: 1px solid $primaryFillColor;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-appearance: none;
+}
+
+::ng-deep .p-checkbox .p-checkbox-box:hover {
+  border: 2px solid green;
+}
+
+::ng-deep .p-multiselect:focus {
+  border-color: #ced4da;
+}
+
+::ng-deep .p-multiselect-panel .p-multiselect-items .p-multiselect-item:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  box-shadow: none;
+  border: 2px solid green;
+  border-radius: 5px;
+}
+
+::ng-deep
+  .p-checkbox:not(.p-checkbox-disabled)
+  .p-checkbox-box.p-highlight:hover {
+  border-color: $primaryFillColor;
+  color: #ffffff;
+}
+
+::ng-deep .p-checkbox .p-checkbox-box.p-highlight {
+  background: $primaryFillColor;
+}
+
+input:focus {
+  outline: none !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+input[type="text"],
+textarea:focus {
+  border-color: #ced4da;
+}
+
+textarea:hover {
+  border: 1px solid $primaryFillColor;
+}
+
+textarea {
+  outline: none !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+
+.labels {
+  color: #020202;
+  margin-bottom: 8px;
+}
+
+.descArea {
+  width: 60%;
+  padding-bottom: 30px;
+}
+
+.sendBtn {
+  color: white;
+  width: 40%;
+  background-color: $primaryFillColor;
+}
+
+.errorMsg {
+  color: red;
+  margin-top: 10px;
+}
+
+::ng-deep .p-multiselect {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .additional-skills {
+    width: 100% !important;
+  }
+  .inputSet span {
+    display: flex;
+    justify-content: center;
+  }
+
+  .inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .sendBtn {
+    align-self: center;
+    &:hover {
+      outline: none !important;
+      -webkit-appearance: none;
+      box-shadow: none !important;
+    }
+    &:focus {
+      outline: none !important;
+      -webkit-appearance: none;
+      box-shadow: none !important;
+    }
+  }
+
+  .descArea {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .textSpace {
+    align-items: center;
+    width: 80%;
+  }
+
+  .inputCell {
+    width: 80%;
+    margin-bottom: 20px;
+    align-self: center;
+  }
+
+  #dropdownSkills {
+    width: 80%;
+    margin-bottom: 20px;
+    align-self: center;
+  }
+
+  label {
+    margin-left: 45px;
+    margin-bottom: 10px;
+  }
+
+  .descArea {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .descArea textarea {
+    margin-left: 45px;
+  }
+}

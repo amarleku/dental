@@ -1,0 +1,81 @@
+@import "./src/styles/base";
+.dashboard-section {
+  padding-left: 180px;
+  justify-content: center;
+  width: 90%;
+}
+
+.card {
+  display: block;
+  margin-top: 2em;
+  width: 100%;
+  animation: all 1s;
+  -webkit-animation: all 1s;
+  -moz-animation: all 1s;
+  -o-animation: all 1s;
+  -ms-animation: all 1s;
+}
+
+@keyframes card {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.box-shadow {
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.18);
+  border-radius: 10px;
+}
+
+.header {
+  padding: 10px;
+}
+
+.headerText {
+  font-size: 16px;
+  text-decoration: none;
+  text-underline: none;
+  color: #020202;
+  margin-right: 15px;
+}
+
+.userIcon {
+  font-size: 30px;
+  color: #020202;
+}
+
+.icon {
+  font-size: 70px;
+  color: $primaryFillColor;
+  padding-right: 30px;
+}
+
+.numbers {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.stats {
+  width: 45%;
+  border-radius: 15px;
+  box-shadow: 5px 7px 12px 0px #88888847;
+}
+
+.cardStats {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.employee-title {
+  color: $primaryFillColor;
+  font-weight: bold;
+  text-align: center;
+}
+
+#lineDataChart {
+  height: 200px;
+}

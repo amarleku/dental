@@ -1,0 +1,31 @@
+<div class="dashboard">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <div class="sidenav">
+    <app-sidenav></app-sidenav>
+  </div>
+
+  <div class="container-fluid dashboard-section pt-3">
+    <div class="d-flex justify-content-between p-3 dashHeader">
+      <h2 class="header">Dashboard</h2>
+      <div class="userData d-flex flex-row align-items-center">
+        <a class="headerText" href="#/reset-pwd">{{ emailAddress }}</a>
+        <i class="fa fa-user-circle userIcon" aria-hidden="true"></i>
+      </div>
+    </div>
+
+    <div class="container-fluid chart" [ngStyle]="{'display' : displayService.displayStudentChartCheck ? '' : 'none'}">
+      <canvas style="height:40vh; width:80vw" #myCanvas id="lineDataChart2">{{ studentsLineData }}</canvas>
+    </div>
+
+    <div class="container-fluid chart" [ngStyle]="{'display' : displayService.displayBusinessChartCheck ? '' : 'none'}">
+      <canvas style="height:40vh; width:80vw" #myCanvas id="lineDataChart1">{{ businessLineData }}</canvas>
+    </div>
+
+    <div *ngIf="displayService.displayStudentTable">
+      <app-student-overview></app-student-overview>
+    </div>
+    <div *ngIf="displayService.displayBusinessDataTable">
+      <app-business-overview></app-business-overview>
+    </div>
+  </div>
+</div>

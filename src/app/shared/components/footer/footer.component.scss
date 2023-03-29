@@ -1,0 +1,53 @@
+// Footer
+@import "../../../../styles/base.scss";
+
+.footer {
+  padding-top: 30px;
+  margin-top: 80px;
+  align-items: center;
+  width: 100%;
+  background-color: $primaryFillColor;
+  padding-bottom: 30px;
+}
+
+.footerCols {
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerFooter {
+  color: white;
+  padding-right: 100px;
+}
+
+.footerHeaders {
+  font-size: 25px;
+  color: white;
+}
+
+.footerInfo {
+  color: white;
+  text-decoration: none;
+}
+
+.footerHeadersAddress {
+  color: white;
+  width: 26%;
+}
+
+.footerInfoAddress {
+  word-break: break-all;
+  white-space: normal;
+}
+
+.horizontal {
+  height: 5px;
+  margin-top: 20px;
+  color: #fff;
+}
+
+.copyright {
+  margin-top: 10px;
+  font-size: 15px;
+  color: white;
+}

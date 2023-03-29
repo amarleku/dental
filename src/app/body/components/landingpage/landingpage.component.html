@@ -1,0 +1,172 @@
+<app-header></app-header>
+<!-- Main Section !-->
+<div class="firstSection">
+  <div class="row gx-0">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 firstColumn mobile-header">
+      <h2 class="header1 mobile-header">
+        Innovation Management Academy Albania
+      </h2>
+      <p class="text1 text-justify mobile-header">
+        Innovation Management Academy Albania has become a recognized leader in intrapreneurship and entrepreneurship
+        education by bridging the diverse ICT talents & hidden gems with corporates. It is divided into two main
+        pillars: Innovation Academy & Talent Acquisition.
+      </p>
+      <button class="btn learnBtn mb-5" (click)="about()">Learn More</button>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 web-header">
+      <video id="background-video" width="100%" height="100%" style="object-fit: none" autoplay="autoplay" loop="loop"
+        [muted]="'muted'">
+        <source src="/assets/video/video.webm" />
+      </video>
+      <script>
+        $("video").prop("muted", true);
+      </script>
+    </div>
+    <div class="video-overlay web-header"></div>
+    <div class="video-content web-header">
+      <h2 class="header1">Innovation Management Academy Albania</h2>
+      <p class="text1 text-justify">
+        Innovation Management Academy Albania has become a recognized leader in intrapreneurship and entrepreneurship
+        education by bridging the diverse ICT talents & hidden gems with corporates. It is divided into two main
+        pillars: Innovation Academy & Talent Acquisition.
+      </p>
+      <button class="btn learnBtn" (click)="about()">Learn More</button>
+    </div>
+  </div>
+</div>
+
+<!-- Buttons !-->
+<div class="span container s-b-menu">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <h2 class="categoryBTN btn btn-lg btn-danger text-center" (click)="students()">
+        <a class="student-href" href="#/talent"> Talent</a>
+      </h2>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 bussniess-side">
+      <h2 class="categoryBTN btn btn-lg btn-danger text-center" (click)="bussniess()">
+        <a class="student-href" href="#/business"> Business</a>
+      </h2>
+    </div>
+  </div>
+</div>
+
+<!-- Lectures !-->
+<div class="lecturers container">
+  <p-carousel [value]="lecturers" styleClass="custom-carousel" [numVisible]="4" [numScroll]="4" [circular]="false"
+    [autoplayInterval]="3000">
+    <ng-template pTemplate="header">
+      <h5 class="lecturersHeader text-center mb-5">Our Lecturers</h5>
+    </ng-template>
+    <ng-template let-lecturer pTemplate="items">
+      <div class="product-item pt-4">
+        <div class="product-item-content">
+          <div class="mb-3 d-flex justify-content-center">
+            <div class="card lectureCard">
+              <div class="card-body imgWrapper">
+                <img src="assets/lectures/{{ lecturer.image.concat('.png') }}" [alt]="lecturer.name" class="imgs" />
+                <h3 class="mb-1 d-flex justify-content-center names">
+                  {{ lecturer.image }}
+                </h3>
+                <div class="icons">
+                  <a href="{{ lecturer.profile }}">
+                    <i class="fa fa-linkedin brbys"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!--<span>{{ lecturer.image.concat('.png') }}</span>-->
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>
+
+<!-- Clients !-->
+<div class="clientsSection">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <h2 class="clientsHeader text-center">Our Clients</h2>
+    </div>
+  </div>
+
+  <div class="row container client-icones" *ngIf="clientsDisplay">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 clientsLogos">
+      <img src="assets/clients/AAB.png" class="hexagons" alt="client1" />
+      <img src="assets/clients/Abkons.png" class="hexagons" alt="client1" />
+      <img src="assets/clients/Acrem.png" class="hexagons" alt="client1" />
+      <img src="assets//clients/AKSHI.png" class="hexagons" alt="client1" />
+      <img src="assets/clients/Alb Chrome.png" class="hexagons" alt="client1" />
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 clientsLogos">
+      <img src="assets/clients/Easy Pay.png" class="hexagons" alt="client1" />
+      <img src="assets/clients/Facilization.png" class="hexagons" alt="client1" />
+      <img src="assets//clients/Balkans Capital.png" class="hexagons" alt="client1" />
+      <img src="assets/clients/Century 21.png" class="hexagons" alt="client1" />
+      <img src="assets/clients/Credins Bank.png" class="hexagons" alt="client1" />
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 clientsLogos" *ngIf="showMore">
+      <img src="assets/clients/Innbox.png" class="hexagons" alt="client1" />
+      <img src="assets/clients/Innovaway.png" class="hexagons" alt="client1" />
+      <img src="assets/clients/Kreatx.png" class="hexagons" alt="client1" />
+      <img src="assets/clients/Green-Coast.png" class="hexagons" alt="client1" />
+      <img src="assets/clients/Hermex.png" class="hexagons" alt="client1" />
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 clientsLogos" *ngIf="showMore">
+      <img src="assets/clients/Metropolitan.png" class="hexagons" alt="client1" />
+      <img src="assets/clients/MVM.png" class="hexagons" alt="client1" />
+      <img src="assets/clients/NOA.png" class="hexagons" alt="client1" />
+      <img src="assets/clients/OTP Bank.png" class="hexagons" alt="client1" />
+      <img src="assets/clients/Mane-TCI.png" class="hexagons" alt="client1" />
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 clientsLogos" *ngIf="showMore">
+      <img src="assets/clients/Porche.png" class="hexagons" alt="client1" />
+      <img src="assets/clients/Posta Shqiptare.png" class="hexagons" alt="client1" />
+      <img src="assets/clients/Raiffeisen Bank.png" class="hexagons" alt="client1" />
+      <img src="assets/clients/Roche.png" class="hexagons" alt="client1" />
+      <img src="assets/clients/Triple City.png" class="hexagons" alt="client1" />
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 clientsLogos" *ngIf="showMore">
+      <img src="assets/clients/Tirana Bank.png" class="hexagons" alt="client1" />
+      <img src="assets//clients/Tumo Tirana.png" class="hexagons" alt="client1" />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+      <button class="btn loadBtn" (click)="loadMore()">{{ btnText }}</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <p-carousel [value]="testimonialsCarusel" styleClass="custom-carousel" [numVisible]="1" [numScroll]="1"
+    [circular]="true" [autoplayInterval]="3000">
+    <ng-template pTemplate="header">
+      <h5 class="lecturersHeader text-center text-justify mb-5">
+        Testimonials
+      </h5>
+    </ng-template>
+    <ng-template let-lecturer pTemplate="item">
+      <div class="pt-4 mr-2 ml-2">
+        <div class="product-item-content">
+          <div class="mb-3 d-flex justify-content-center">
+            <div class="card-body imgWrapper">
+              <img src="assets/{{ lecturer.image.concat('.png') }}" [alt]="lecturer.name" class="testimonial-image" />
+              <p class="mb-1 d-flex justify-content-center names pb-4 text-justify">
+                {{ lecturer.name }}
+              </p>
+              <p class="mb-1 d-flex justify-content-center description-content text-justify font-14">
+                {{ lecturer.description }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+</div>
+<app-footer></app-footer>

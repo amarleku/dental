@@ -1,0 +1,83 @@
+@import "/src/styles/base";
+.menu-title {
+  padding-right: 20px;
+}
+
+.navigation {
+  position: fixed;
+  height: 100%;
+  background: rgb(70, 132, 119);
+  background: linear-gradient(
+    360deg,
+    rgba(70, 132, 119, 1) 0%,
+    rgba(1, 111, 134, 1) 100%
+  );
+  overflow-x: hidden;
+  transition: all 0.5s;
+
+  & ul {
+    width: 100%;
+  }
+
+  & li a {
+    text-decoration: none;
+    color: #f4f4f4;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: $font-ubuntu;
+    // z-index: 1;
+    list-style: none;
+  }
+
+  & li {
+    border-bottom: 0.3mm solid white;
+    list-style: none;
+    padding: 25px;
+    &:hover {
+      background: #a9dfd724;
+      color: #ced4da;
+    }
+    &.menu {
+      cursor: pointer;
+    }
+  }
+}
+
+.right-arrow {
+  font-size: 20px;
+  color: white;
+}
+
+.grid {
+  color: white;
+  padding-right: 5px;
+  font-size: 20px;
+}
+.navigation {
+  & ul li a:hover {
+    color: gray;
+    & svg {
+      fill: gray;
+    }
+  }
+}
+
+svg {
+  fill: white;
+  margin-right: 5px;
+}
+
+.logo-container {
+  padding: 20px;
+}
+
+#logout {
+  position: absolute;
+  bottom: 0;
+}
+
+.li-without-border {
+  border-bottom: 0mm solid white !important;
+  cursor: pointer;
+  width: 100%;
+}

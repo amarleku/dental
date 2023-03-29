@@ -1,0 +1,59 @@
+@import "../../../../styles/base.scss";
+
+.wrapper {
+  width: 60%;
+  height: 100%;
+  margin-top: 30px;
+}
+
+.resetBtn {
+  padding: 10px;
+  background-color: $primaryFillColor;
+  color: white;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+#email:hover {
+  outline: none !important;
+  -webkit-appearance:none;
+  box-shadow: none !important;
+  border: 1px solid $primaryFillColor;
+}
+
+#email:focus {
+  outline: none !important;
+  -webkit-appearance:none;
+  box-shadow: none !important;
+  border: 1px solid $primaryFillColor;
+}
+
+#password:focus {
+  outline: none !important;
+  -webkit-appearance:none;
+  box-shadow: none !important;
+  border: 1px solid $primaryFillColor;
+}
+
+#password:hover {
+  outline: none !important;
+  -webkit-appearance:none;
+  box-shadow: none !important;
+  border: 1px solid $primaryFillColor;
+}
+
+.icon {
+  padding-right: 10px;
+}
+
+.submitFailure {
+  width: 97%;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.errorMsg {
+  margin-top: 10px;
+  padding: 10px;
+  color: black;
+}

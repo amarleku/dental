@@ -1,0 +1,103 @@
+<div class="d-flex justify-content-start std-overview">
+  <div class="container student-overview pt-3">
+    <div class="card">
+      <div class="d-flex justify-content-between p-2">
+        <div class="space-regulator">
+          <h3 class="table-header">Tenant's Overview</h3>
+        </div>
+        <div class="p-d-flex search">
+          <span class="p-input-icon-right p-ml-auto">
+            <input type="text" class="form-control search-field mb-1" (input)="applyFilterGlobal($event, 'contains')"
+              placeholder="Search Student Data" />
+          </span>
+        </div>
+      </div>
+      <p-table responsiveLayout="stack"
+        [globalFilterFields]="['name', 'lastName', 'telephone', 'email', 'skills', 'additionSkills', 'employeeNo', 'exp']"
+        [paginator]="true" [rowsPerPageOptions]="[10,50, { showAll: 'All' }]" sortField="id" [sortOrder]="-1" #dt1
+        [value]="studentData" [rows]="10" [showCurrentPageReport]="true" [loading]="loading"
+        styleClass="p-datatable-gridlines">
+        <ng-template pTemplate="header">
+          <tr>
+            <th id="fullName">
+              <div class="p-d-flex p-jc-between p-ai-center bold">
+                First Name
+              </div>
+            </th>
+            <th id="id">
+              <div class="p-d-flex p-jc-between p-ai-center bold">
+                Last Name
+              </div>
+            </th>
+            <th id="name">
+              <div class="p-d-flex p-jc-between p-ai-center bold">
+                Telephone
+              </div>
+            </th>
+            <th id="name">
+              <div class="p-d-flex p-jc-between p-ai-center bold">
+                E-mail
+              </div>
+            </th>
+            <th id="">
+              <div class="p-d-flex p-jc-between p-ai-center  bold">
+                Skills
+              </div>
+            </th>
+            <th id="options">
+              <div class="p-d-flex p-jc-between p-ai-center bold">
+                Additional Skills
+              </div>
+            </th>
+            <th id="options">
+              <div class="p-d-flex p-jc-between p-ai-center bold">
+                No. of employees
+              </div>
+            </th>
+            <th id="options">
+              <div class="p-d-flex p-jc-between p-ai-center bold">
+                Experience
+              </div>
+            </th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-stdData let-rowIndex="rowIndex">
+          <tr>
+            <td>
+              <span class="p-column-title">Name</span>
+              <span class="full-name">{{stdData.name}}</span>
+            </td>
+            <td>
+              <span class="p-column-title">Last Name</span>
+              <span class="full-name id">{{stdData.lastName}}</span>
+            </td>
+            <td>
+              <span class="p-column-title">Telephone</span>
+              <span class="full-name">{{stdData.tel}}</span>
+            </td>
+            <td>
+              <span class="p-column-title">E-mail</span>
+              <span class="full-name">{{stdData.email}}</span>
+            </td>
+            <td>
+              <span class="p-column-title">Skill</span>
+              <span class="full-name">{{stdData.skills}}</span>
+            </td>
+            <td>
+              <span class="p-column-title">Additional Skills</span>
+              <span class="full-name">{{stdData.additionSkills}}</span>
+            </td>
+            <td>
+              <span class="p-column-title">No. of employees</span>
+              <span class="full-name">{{stdData.employeeNo}}</span>
+            </td>
+            <td>
+              <span class="p-column-title">Experience</span>
+              <span class="full-name">{{stdData.exp}}</span>
+            </td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>
