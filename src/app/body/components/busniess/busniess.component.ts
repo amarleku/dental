@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { FirestoreService } from '../../services/firestore.service';
 import { Message } from 'primeng/api';
 import { MessageService } from 'primeng/api';
@@ -21,24 +21,24 @@ export class BusniessComponent implements OnInit {
   date: string = (new Date()).toISOString().substring(0,10);
   formattedSkills: string[] = [];
 
-  mainForm = new FormGroup({
-    fullName: new FormControl('', Validators.compose([Validators.required])),
-    email: new FormControl(
+  mainForm = new UntypedFormGroup({
+    fullName: new UntypedFormControl('', Validators.compose([Validators.required])),
+    email: new UntypedFormControl(
       '',
       Validators.compose([Validators.required, Validators.email])
     ),
-    telephone: new FormControl('', Validators.compose([Validators.required])),
-    companyName: new FormControl('', Validators.compose([Validators.required])),
-    NUIS: new FormControl('', Validators.compose([Validators.required])),
-    location: new FormControl('', Validators.compose([Validators.required])),
-    positionReq: new FormControl('', Validators.compose([Validators.required])),
-    additionalSkill: new FormControl(''),
-    noOfEmployees: new FormControl(
+    telephone: new UntypedFormControl('', Validators.compose([Validators.required])),
+    companyName: new UntypedFormControl('', Validators.compose([Validators.required])),
+    NUIS: new UntypedFormControl('', Validators.compose([Validators.required])),
+    location: new UntypedFormControl('', Validators.compose([Validators.required])),
+    positionReq: new UntypedFormControl('', Validators.compose([Validators.required])),
+    additionalSkill: new UntypedFormControl(''),
+    noOfEmployees: new UntypedFormControl(
       '',
       Validators.compose([Validators.required])
     ),
-    describe: new FormControl(''),
-    date: new FormControl((new Date()).toISOString().substring(0,10)),
+    describe: new UntypedFormControl(''),
+    date: new UntypedFormControl((new Date()).toISOString().substring(0,10)),
   });
 
   constructor(

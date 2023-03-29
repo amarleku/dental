@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormControl, UntypedFormGroup, Validators } from "@angular/forms";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { Router } from "@angular/router";
 import { AuthService } from "../../services/auth.service";
@@ -11,12 +11,12 @@ import { AuthService } from "../../services/auth.service";
 })
 export class ResetPwdComponent implements OnInit {
 
-  resetForm = new FormGroup({
-    password: new FormControl('', Validators.compose([
+  resetForm = new UntypedFormGroup({
+    password: new UntypedFormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(6)
     ])),
-    repeatPassword: new FormControl('', Validators.compose([
+    repeatPassword: new UntypedFormControl('', Validators.compose([
       Validators.required,
       Validators.minLength(6)
     ]))

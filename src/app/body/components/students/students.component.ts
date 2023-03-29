@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { FirestoreService } from '../../services/firestore.service';
 import { Message, MessageService } from 'primeng/api';
 
@@ -22,19 +22,19 @@ export class StudentsComponent implements OnInit {
 
   msgs1: Message[] = [];
 
-  mainForm = new FormGroup({
-    name: new FormControl('', Validators.compose([Validators.required])),
-    lastName: new FormControl('', Validators.compose([Validators.required])),
-    telephone: new FormControl('', Validators.compose([Validators.required])),
-    email: new FormControl(
+  mainForm = new UntypedFormGroup({
+    name: new UntypedFormControl('', Validators.compose([Validators.required])),
+    lastName: new UntypedFormControl('', Validators.compose([Validators.required])),
+    telephone: new UntypedFormControl('', Validators.compose([Validators.required])),
+    email: new UntypedFormControl(
       '',
       Validators.compose([Validators.required, Validators.email])
     ),
-    position: new FormControl('', Validators.compose([Validators.required])),
-    additionSkills: new FormControl(''),
-    employeeNo: new FormControl('', Validators.compose([Validators.required])),
-    experience: new FormControl(''),
-    date: new FormControl((new Date()).toISOString().substring(0,10)),
+    position: new UntypedFormControl('', Validators.compose([Validators.required])),
+    additionSkills: new UntypedFormControl(''),
+    employeeNo: new UntypedFormControl('', Validators.compose([Validators.required])),
+    experience: new UntypedFormControl(''),
+    date: new UntypedFormControl((new Date()).toISOString().substring(0,10)),
   });
 
   constructor(
